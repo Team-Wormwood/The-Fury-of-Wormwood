@@ -1,0 +1,50 @@
+{
+    "format_version": "1.16.100",
+    "minecraft:item": {
+        "description": {
+            "identifier": "wormwood:556_magazine",
+            "category": "equipment"
+        },
+        "components": {
+            "minecraft:use_duration": 4096,
+            "minecraft:on_use": {
+                "on_use": {
+                    "event": "5.56_magazine:pre_loading"
+                }
+            },
+            "minecraft:creative_category": {
+                "parent": "itemGroup.name.equipment"
+            },
+            "minecraft:icon": {
+                "texture": "5.56_magazine"
+            }
+        },
+        "events": {
+            "5.56_magazine:pre_loading": {
+                "sequence": [
+                    {
+                        "condition": "query.scoreboard('ammunition.CAR') == 0",
+                        "trigger": {
+                            "event": "5.56_magazine:loading"
+                        }
+                    }
+                ]
+            },
+            "5.56_magazine:loading": {
+                "decrement_stack": {
+                    "ignore_game_mode": false
+                },
+                "run_command": {
+                    "command": [
+                        "scoreboard players set @s ammunition.CAR 24",
+                        "function SFX/magazine"
+                    ]
+                },
+                "trigger": {
+                    "event": "modified_player:addclientflag.firing.chinese_assault_rifle",
+                    "target": "holder"
+                }
+            }
+        }
+    }
+}

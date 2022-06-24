@@ -1,0 +1,22 @@
+{
+	"format_version": "1.10.0",
+	"animation_controllers": {
+		"controller.animation.projectiles.collision": {
+			"states": {
+				"default": {
+					"transitions": [
+						{
+							"colliding": "query.variant == 1"
+						}
+					]
+				},
+				"colliding": {
+					"on_entry": [
+						"@s despawn",
+						"/particle minecraft:basic_smoke_particle ~ ~ ~"
+					]
+				}
+			}
+		}
+	}
+}

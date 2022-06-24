@@ -1,0 +1,12 @@
+{
+	"resource_pack_name": "The Fury of Wormwood",
+	"texture_name": "atlas.items",
+	"texture_data": {
+		"chinese_assault_rifle": {
+			"textures": "textures/items/chinese_assault_rifle"
+		},
+		"5.56_magazine": {
+			"textures": "textures/items/556_magazine"
+		}
+	}
+}

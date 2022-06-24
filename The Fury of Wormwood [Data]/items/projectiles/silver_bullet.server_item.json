@@ -1,0 +1,18 @@
+{
+    "format_version": "1.16.100",
+    "minecraft:item": {
+        "description": {
+            "identifier": "wormwood:silver_bullet",
+            "category": "None"
+        },
+        "components": {
+            "minecraft:creative_category": {
+                "parent": "itemGroup.equipment.name"
+            },
+            "minecraft:icon": {
+                "texture": "silver_bullet"
+            }
+        },
+        "events": {}
+    }
+}

@@ -1,0 +1,2 @@
+playsound lodestone_compass.link_compass_to_lodestone
+playsound crossbow.loading.end

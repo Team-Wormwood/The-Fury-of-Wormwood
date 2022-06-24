@@ -1,0 +1,55 @@
+{
+    "format_version": "1.16.100",
+    "minecraft:item": {
+        "description": {
+            "identifier": "wormwood:chinese_assault_rifle",
+            "category": "equipment"
+        },
+        "components": {
+            "minecraft:can_destroy_in_creative": false,
+            "minecraft:max_stack_size": 1,
+            "minecraft:use_duration": 4096,
+            "minecraft:damage": 3,
+            "minecraft:on_use": {
+                "on_use": {
+                    "event": "chinese_assault_rifle:fire.prefiring"
+                }
+            },
+            "minecraft:creative_category": {
+                "parent": "itemGroup.name.equipment"
+            },
+            "minecraft:icon": {
+                "texture": "chinese_assault_rifle"
+            }
+        },
+        "events": {
+            "chinese_assault_rifle:fire.prefiring": {
+                "sequence": [
+                    {
+                        "condition": "query.scoreboard('ammunition.CAR') >= 1 && query.scoreboard('ammunition.CAR') <= 24",
+                        "trigger": {
+                            "event": "chinese_assault_rifle:fire.firing"
+                        }
+                    }
+                ]
+            },
+            "chinese_assault_rifle:fire.firing": {
+                "shoot": {
+                    "projectile": "wormwood:bullet.chinese_assault_rifle",
+                    "launch_power": 1,
+                    "angle_offset": "math.Random(1, 3)" // Optionally revisit to use Random Integer?
+                },
+                "run_command": {
+                    "command": [
+                        "scoreboard players remove @s[scores={ammunition.CAR=1..24}] ammunition.CAR 1",
+                        "function SFX/rifle"
+                    ]
+                },
+                "trigger": {
+                    "event": "modified_player:add_client_flag.chinese_assault_rifle",
+                    "target": "holder"
+                }
+            }
+        }
+    }
+}

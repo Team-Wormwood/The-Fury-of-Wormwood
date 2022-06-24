@@ -1,0 +1,17 @@
+## Team Wormwood - 2022
+
+## Packs
+pack.description=A wacky compilation of weapons and artifacts from various gaming and pop-culture media.. §6Contains pointy objects.§r
+pack.name=§aThe Fury of The Wormwood§r 
+
+## Blocks
+
+## Items
+item.wormwood:chinese_assault_rifle=Chinese Assault Rifle§r
+item.wormwood:556_magazine=5.56 Round Magazine§r
+
+
+## Entities
+item.wormwood:bullet.chinese_assault_rifle=Chinese Assault Rifle Bullet
+
+## Interactions

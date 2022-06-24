@@ -1,0 +1,1 @@
+fill ~-1 ~-1 ~-1 ~1 ~1 ~1 wormwood:light_block.1 0 replace air

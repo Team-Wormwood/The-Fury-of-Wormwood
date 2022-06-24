@@ -1,0 +1,16 @@
+{
+	"format_version": "1.14.0",
+	"sound_definitions": {
+		"weapon.chinese_assault_rifle.fire": {
+			"category": "hostile",
+			"sounds": [
+				{
+					"is3D": true,
+					"name": "sounds/weapons/chinese_assault_rifle.fire",
+					"stream": true,
+					"volume": 4.0
+				}
+			]
+		}
+	}
+}
