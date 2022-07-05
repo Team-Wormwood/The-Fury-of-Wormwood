@@ -2,13 +2,90 @@
 	"format_version": "1.14.0",
 	"sound_definitions": {
 		"weapon.chinese_assault_rifle.fire": {
-			"category": "hostile",
+			"category": "player",
 			"sounds": [
 				{
-					"is3D": true,
 					"name": "sounds/weapons/chinese_assault_rifle.fire",
+					"is3D": true,
 					"stream": true,
-					"volume": 4.0
+					"volume": 1.5
+				}
+			]
+		},
+		"weapon.chinese_assault_rifle.reload": {
+			"category": "player",
+			"sounds": [
+				{
+					"name": "sounds/weapons/chinese_assault_rifle.reload",
+					"is3D": false,
+					"stream": true,
+					"volume": 1.0
+				}
+			]
+		},
+		"weapon.laser_pistol.fire": {
+			"category": "player",
+			"sounds": [
+				{
+					"name": "sounds/weapons/laser_pistol.fire",
+					"is3D": true,
+					"stream": true,
+					"volume": 1.25
+				}
+			]
+		},
+		"weapon.laser_pistol.reload": {
+			"category": "player",
+			"sounds": [
+				{
+					"name": "sounds/weapons/laser_pistol.reload",
+					"is3D": false,
+					"stream": true,
+					"volume": 1.0
+				}
+			]
+		},
+		"weapon.ozutsu.fire": {
+			"category": "player",
+			"sounds": [
+				{
+					"name": "sounds/weapons/ozutsu.fire",
+					"is3D": true,
+					"stream": true,
+					"volume": 1.25
+				}
+			]
+		},
+		"weapon.ozutsu.reload": {
+			"category": "player",
+			"sounds": [
+				{
+					"name": "sounds/weapons/ozutsu.reload",
+					"is3D": false,
+					"stream": true,
+					"volume": 1.0
+				}
+			]
+		},
+		"weapon.lever_action_rifle.fire": {
+			"category": "player",
+			"sounds": [
+				{
+					"name": "sounds/weapons/lever_action_rifle.fire",
+					"is3D": true,
+					"stream": true,
+					"volume": 1.25
+				}
+			]
+		},
+		"weapon.lever_action_rifle.reload": {
+			"category": "player",
+			"sounds": [
+				{
+					"name": "sounds/weapons/lever_action_rifle.reload",
+					"is3D": false,
+					"stream": true,
+					"volume": 1.0
 				}
 			]
 		}

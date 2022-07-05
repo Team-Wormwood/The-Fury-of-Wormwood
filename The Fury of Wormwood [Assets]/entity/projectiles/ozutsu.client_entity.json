@@ -1,0 +1,33 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "wormwood:bullet.ozutsu",
+			"materials": {
+				"default": "entity_emissive_alpha"
+			},
+			"textures": {
+				"default": "textures/blocks/anvil_base"
+			},
+			"geometry": {
+				"default": "geometry.cannonball"
+			},
+			"scripts": {
+				"animate": [
+					"bullet_travel",
+					"spin"
+				]
+			},
+			"animations": {
+				"bullet_travel": "animation.bullet.travel",
+				"spin": "animation.bullet.spin"
+			},
+			"particle_effects": {
+				"trail.bullet": "wormwood:trail.ozutsu"
+			},
+			"render_controllers": [
+				"controller.render.default"
+			]
+		}
+	}
+}

@@ -1,0 +1,80 @@
+{
+    "format_version": "1.16.0",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "wormwood:bullet.lever_action_rifle",
+            "runtime_identifier": "minecraft:snowball",
+            "is_summonable": true,
+            "animations": {
+                "collision": "controller.animation.projectiles.collision"
+            },
+            "scripts": {
+                "animate": [
+                    "collision"
+                ]
+            }
+        },
+        "components": {
+            "minecraft:type_family": {
+                "family": [
+                    "inanimate",
+                    "bullet"
+                ]
+            },
+            // "minecraft:conditional_bandwidth_optimization": {
+            //     "default_values": {
+            //         "use_motion_prediction_hints": true
+            //     }
+            // },
+            "minecraft:collision_box": {
+                "width": 0.1,
+                "height": 0.1
+            },
+            "minecraft:conditional_bandwidth_optimization": {},
+            "minecraft:is_tamed": {},
+            "minecraft:projectile": {
+                "power": 8,
+                "uncertainty_base": 0,
+                "uncertainty_multiplier": 0,
+                "gravity": 0.01,
+                "on_hit": {
+                    "impact_damage": {
+                        "damage": 13,
+                        "knockback": true
+                    },
+                    "definition_event": {
+                        "event_trigger": {
+                            "event": "collide"
+                        }
+                    }
+                }
+            }
+        },
+        "component_groups": {
+            "collided": {
+                "minecraft:variant": {
+                    "value": 1
+                }
+            },
+            "despawned": {
+                "minecraft:instant_despawn": {}
+            }
+        },
+        "events": {
+            "collide": {
+                "add": {
+                    "component_groups": [
+                        "collided"
+                    ]
+                }
+            },
+            "despawn": {
+                "add": {
+                    "component_groups": [
+                        "despawned"
+                    ]
+                }
+            }
+        }
+    }
+}

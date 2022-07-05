@@ -2,7 +2,7 @@
     "format_version": "1.16.100",
     "minecraft:item": {
         "description": {
-            "identifier": "wormwood:chinese_assault_rifle",
+            "identifier": "wormwood:laser_pistol",
             "category": "equipment"
         },
         "components": {
@@ -10,44 +10,48 @@
             "tag:wormwood:attachable_weapon": {},
             "minecraft:max_stack_size": 1,
             "minecraft:use_duration": 4096,
-            "minecraft:damage": 3,
+            "minecraft:damage": 2,
+            "minecraft:cooldown": {
+                "category": "laser_pistol",
+                "duration": 0.45
+            },
             "minecraft:on_use": {
                 "on_use": {
-                    "event": "chinese_assault_rifle:fire.prefiring"
+                    "event": "laser_pistol:fire.prefiring"
                 }
             },
             "minecraft:creative_category": {
                 "parent": "itemGroup.name.equipment"
             },
             "minecraft:icon": {
-                "texture": "chinese_assault_rifle"
+                "texture": "laser_pistol"
             }
         },
         "events": {
-            "chinese_assault_rifle:fire.prefiring": {
+            "laser_pistol:fire.prefiring": {
                 "sequence": [
                     {
-                        "condition": "query.scoreboard('ammunition.CAR') >= 1 && query.scoreboard('ammunition.CAR') <= 24",
+                        "condition": "query.scoreboard('ammunition.LaPi') >= 1 && query.scoreboard('ammunition.LaPi') <= 24",
                         "trigger": {
-                            "event": "chinese_assault_rifle:fire.firing"
+                            "event": "laser_pistol:fire.firing"
                         }
                     }
                 ]
             },
-            "chinese_assault_rifle:fire.firing": {
+            "laser_pistol:fire.firing": {
                 "shoot": {
-                    "projectile": "wormwood:bullet.chinese_assault_rifle",
+                    "projectile": "wormwood:bullet.laser_pistol",
                     "launch_power": 1,
                     "angle_offset": "math.Random(1, 3)" // Optionally revisit to use Random Integer?
                 },
                 "run_command": {
                     "command": [
-                        "scoreboard players remove @s[scores={ammunition.CAR=1..24}] ammunition.CAR 1",
+                        "scoreboard players remove @s[scores={ammunition.LaPi=1..24}] ammunition.LaPi 1",
                         "function SFX/rifle"
                     ]
                 },
                 "trigger": {
-                    "event": "modified_player:add_client_flag.chinese_assault_rifle",
+                    "event": "modified_player:add_client_flag.laser_pistol",
                     "target": "holder"
                 }
             }

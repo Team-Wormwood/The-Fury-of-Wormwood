@@ -1,6 +1,7 @@
 {
 	"format_version": 2,
 	"header": {
+		"uuid": "102065e8-2651-483b-9ce9-3cce24fab065",
 		"name": "pack.name",
 		"description": "pack.description",
 		"min_engine_version": [
@@ -8,17 +9,15 @@
 			18,
 			0
 		],
-		"uuid": "102065e8-2651-483b-9ce9-3cce24fab065",
 		"version": [
 			1,
 			0,
 			0
 		]
 	},
-	"modules": [
+	"dependencies": [
 		{
-			"type": "data",
-			"uuid": "54c50f70-8990-47cd-ab81-22f59c9252d9",
+			"uuid": "5bd63271-6281-4f27-b1d7-ce5838ac2e6a",
 			"version": [
 				1,
 				0,
@@ -26,9 +25,10 @@
 			]
 		}
 	],
-	"dependencies": [
+	"modules": [
 		{
-			"uuid": "5bd63271-6281-4f27-b1d7-ce5838ac2e6a",
+			"type": "data",
+			"uuid": "54c50f70-8990-47cd-ab81-22f59c9252d9",
 			"version": [
 				1,
 				0,

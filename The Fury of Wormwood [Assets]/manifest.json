@@ -1,11 +1,7 @@
 {
 	"format_version": 2,
-	"metadata": {
-		"authors": [
-			"Team Wormwood"
-		]
-	},
 	"header": {
+		"uuid": "5bd63271-6281-4f27-b1d7-ce5838ac2e6a",
 		"name": "pack.name",
 		"description": "pack.description",
 		"min_engine_version": [
@@ -13,13 +9,22 @@
 			18,
 			0
 		],
-		"uuid": "5bd63271-6281-4f27-b1d7-ce5838ac2e6a",
 		"version": [
 			1,
 			0,
 			0
 		]
 	},
+	"dependencies": [
+		{
+			"uuid": "102065e8-2651-483b-9ce9-3cce24fab065",
+			"version": [
+				1,
+				0,
+				0
+			]
+		}
+	],
 	"modules": [
 		{
 			"type": "resources",
@@ -31,22 +36,9 @@
 			]
 		}
 	],
-	"dependencies": [
-		{
-			"uuid": "102065e8-2651-483b-9ce9-3cce24fab065",
-			"version": [
-				1,
-				0,
-				0
-			]
-		},
-		{
-			"uuid": "62d5bbb1-55d3-49ba-ace3-33210525aa4a",
-			"version": [
-				1,
-				0,
-				0
-			]
-		}
-	]
+	"metadata": {
+		"authors": [
+			"Team Wormwood"
+		]
+	}
 }

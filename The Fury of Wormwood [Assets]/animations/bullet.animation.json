@@ -20,6 +20,18 @@
                     ]
                 }
             }
+        },
+        "animation.bullet.spin": {
+            "loop": true,
+            "bones": {
+                "root": {
+                    "rotation": [
+                        "query.anim_time * 360",
+                        0,
+                        0
+                    ]
+                }
+            }
         }
     }
 }

@@ -7,6 +7,24 @@
 		},
 		"5.56_magazine": {
 			"textures": "textures/items/556_magazine"
+		},
+		"laser_pistol": {
+			"textures": "textures/items/laser_pistol"
+		},
+		"energy_cell": {
+			"textures": "textures/items/energy_cell"
+		},
+		"ozutsu": {
+			"textures": "textures/items/ozutsu"
+		},
+		"cannonball": {
+			"textures": "textures/items/cannonball"
+		},
+		"lever_action_rifle": {
+			"textures": "textures/items/lever_action_rifle"
+		},
+		"44_bullet": {
+			"textures": "textures/items/44_bullet"
 		}
 	}
 }

@@ -1,0 +1,50 @@
+{
+    "format_version": "1.16.100",
+    "minecraft:item": {
+        "description": {
+            "identifier": "wormwood:cannon_ball",
+            "category": "equipment"
+        },
+        "components": {
+            "minecraft:use_duration": 4096,
+            "minecraft:on_use": {
+                "on_use": {
+                    "event": "cannon_ball:pre_loading"
+                }
+            },
+            "minecraft:creative_category": {
+                "parent": "itemGroup.name.equipment"
+            },
+            "minecraft:icon": {
+                "texture": "cannonball"
+            }
+        },
+        "events": {
+            "cannon_ball:pre_loading": {
+                "sequence": [
+                    {
+                        "condition": "query.scoreboard('ammunition.OZT') < 3",
+                        "trigger": {
+                            "event": "cannon_ball:loading"
+                        }
+                    }
+                ]
+            },
+            "cannon_ball:loading": {
+                "decrement_stack": {
+                    "ignore_game_mode": false
+                },
+                "run_command": {
+                    "command": [
+                        "scoreboard players add @s ammunition.OZT 1",
+                        "function SFX/magazine"
+                    ]
+                },
+                "trigger": {
+                    "event": "modified_player:addclientflag.firing.ozutsu",
+                    "target": "holder"
+                }
+            }
+        }
+    }
+}

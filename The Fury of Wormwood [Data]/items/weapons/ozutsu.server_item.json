@@ -2,7 +2,7 @@
     "format_version": "1.16.100",
     "minecraft:item": {
         "description": {
-            "identifier": "wormwood:chinese_assault_rifle",
+            "identifier": "wormwood:ozutsu",
             "category": "equipment"
         },
         "components": {
@@ -10,44 +10,48 @@
             "tag:wormwood:attachable_weapon": {},
             "minecraft:max_stack_size": 1,
             "minecraft:use_duration": 4096,
-            "minecraft:damage": 3,
+            "minecraft:cooldown": {
+                "category": "LeverActionRifle",
+                "duration": 1
+            },
+            "minecraft:damage": 4,
             "minecraft:on_use": {
                 "on_use": {
-                    "event": "chinese_assault_rifle:fire.prefiring"
+                    "event": "ozutsu:fire.prefiring"
                 }
             },
             "minecraft:creative_category": {
                 "parent": "itemGroup.name.equipment"
             },
             "minecraft:icon": {
-                "texture": "chinese_assault_rifle"
+                "texture": "ozutsu"
             }
         },
         "events": {
-            "chinese_assault_rifle:fire.prefiring": {
+            "ozutsu:fire.prefiring": {
                 "sequence": [
                     {
-                        "condition": "query.scoreboard('ammunition.CAR') >= 1 && query.scoreboard('ammunition.CAR') <= 24",
+                        "condition": "query.scoreboard('ammunition.OZT') >= 1 && query.scoreboard('ammunition.OZT') <= 3",
                         "trigger": {
-                            "event": "chinese_assault_rifle:fire.firing"
+                            "event": "ozutsu:fire.firing"
                         }
                     }
                 ]
             },
-            "chinese_assault_rifle:fire.firing": {
+            "ozutsu:fire.firing": {
                 "shoot": {
-                    "projectile": "wormwood:bullet.chinese_assault_rifle",
+                    "projectile": "wormwood:bullet.ozutsu",
                     "launch_power": 1,
                     "angle_offset": "math.Random(1, 3)" // Optionally revisit to use Random Integer?
                 },
                 "run_command": {
                     "command": [
-                        "scoreboard players remove @s[scores={ammunition.CAR=1..24}] ammunition.CAR 1",
+                        "scoreboard players remove @s[scores={ammunition.OZT=1..3}] ammunition.OZT 1",
                         "function SFX/rifle"
                     ]
                 },
                 "trigger": {
-                    "event": "modified_player:add_client_flag.chinese_assault_rifle",
+                    "event": "modified_player:add_client_flag.ozutsu",
                     "target": "holder"
                 }
             }

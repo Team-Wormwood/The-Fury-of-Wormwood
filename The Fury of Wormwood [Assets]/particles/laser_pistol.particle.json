@@ -1,0 +1,77 @@
+{
+	"format_version": "1.10.0",
+	"particle_effect": {
+		"description": {
+			"identifier": "wormwood:trail.laser_pistol",
+			"basic_render_parameters": {
+				"material": "particles_blend",
+				"texture": "textures/particle/laser_particle"
+			}
+		},
+		"curves": {
+			"variable.opacity": {
+				"type": "bezier_chain",
+				"input": "variable.particle_age",
+				"horizontal_range": 0,
+				"nodes": {
+					"1.0": {
+						"value": 0,
+						"slope": 0
+					},
+					"0.88": {
+						"value": 1,
+						"slope": 0
+					}
+				}
+			}
+		},
+		"components": {
+			"minecraft:emitter_initialization": {
+				"creation_expression": "variable.size = Math.random(0.1, 0.2);"
+			},
+			"minecraft:emitter_rate_steady": {
+				"spawn_rate": 40,
+				"max_particles": 100
+			},
+			"minecraft:emitter_lifetime_looping": {
+				"active_time": 1
+			},
+			"minecraft:emitter_shape_sphere": {
+				"radius": 0.1,
+				"direction": ["Math.random(-0.1, 0.1)", "Math.random(-0.05, 0.05)", "Math.random(-0.1, 0.1)"]
+			},
+			"minecraft:particle_lifetime_expression": {
+				"max_lifetime": "(variable.particle_random_1 * 1.65)"
+			},
+			"minecraft:particle_initial_spin": {
+				"rotation_rate": 1
+			},
+			"minecraft:particle_initial_speed": 1,
+			"minecraft:particle_motion_dynamic": {
+				"linear_drag_coefficient": 3
+			},
+			"minecraft:particle_appearance_billboard": {
+				"size": ["0.1 + variable.size", "0.1 + variable.size"],
+				"facing_camera_mode": "lookat_xyz",
+				"uv": {
+					"texture_width": 65,
+					"texture_height": 7,
+					"flipbook": {
+						"base_UV": [0, 0],
+						"size_UV": [8, 7],
+						"step_UV": [8, 0],
+						"frames_per_second": 3,
+						"max_frame": 9
+					}
+				}
+			},
+			"minecraft:particle_motion_collision": {
+				"collision_radius": 0.1,
+				"expire_on_contact": true
+			},
+			"minecraft:particle_appearance_tinting": {
+				"color": [1, 1, 1, 1]
+			}
+		}
+	}
+}
