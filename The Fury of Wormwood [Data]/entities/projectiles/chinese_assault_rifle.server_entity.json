@@ -15,31 +15,50 @@
             }
         },
         "components": {
+            "minecraft:conditional_bandwidth_optimization": {},
+            "minecraft:is_tamed": {},
             "minecraft:type_family": {
                 "family": [
                     "inanimate",
                     "bullet"
                 ]
             },
-            // "minecraft:conditional_bandwidth_optimization": {
-            //     "default_values": {
-            //         "use_motion_prediction_hints": true
-            //     }
-            // },
             "minecraft:collision_box": {
                 "width": 0.1,
                 "height": 0.1
             },
-            "minecraft:conditional_bandwidth_optimization": {},
-            "minecraft:is_tamed": {},
+            "minecraft:despawn": {
+                "despawn_from_simulation_edge": true
+            },
+            "minecraft:break_blocks": {
+                "breakable_blocks": [
+                    "glass",
+                    "glass_pane",
+                    "bamboo",
+                    "reeds"
+                ]
+            },
+            "minecraft:inside_block_notifier": {
+                "block_list": [
+                    {
+                        "block": "minecraft:air",
+                        "exited_block_event": {
+                            "event": "collide",
+                            "target": "self"
+                        }
+                    }
+                ]
+            },
             "minecraft:projectile": {
                 "power": 5,
-                "uncertainty_base": 0,
-                "uncertainty_multiplier": 0,
+                "uncertainty_base": 4,
+                "uncertainty_multiplier": 1,
                 "gravity": 0.01,
+                "crit_particle_on_hurt": true,
+                "multiple_targets": false,
                 "on_hit": {
                     "impact_damage": {
-                        "damage": 13,
+                        "damage": 12,
                         "knockback": true
                     },
                     "definition_event": {

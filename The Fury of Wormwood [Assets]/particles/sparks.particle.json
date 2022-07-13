@@ -1,0 +1,82 @@
+{
+	"format_version": "1.10.0",
+	
+	"particle_effect": {
+		"description": {
+			"identifier": "wormwood:sparks",
+			
+			"basic_render_parameters": {
+				"texture": "textures/bullet_atlas",
+				"material": "particles_blend"
+			}
+		},
+		
+		"curves": {
+			"variable.opacity": {
+				"type": "bezier_chain",
+				
+				"input": "variable.particle_age / variable.particle_lifetime",
+				"nodes": {
+					"0.75": {"left_value": 1, "right_value": 1},
+					"1": {"left_value": 0, "right_value": 0}
+				}
+			}
+		},
+		
+		"components": {
+			"minecraft:emitter_initialization": {
+				"creation_expression": "variable.count = 1; variable.direction.x = 0; variable.direction.z = 0; variable.direction.y = 0; variable.direction.spread = 30; variable.speed = 1;"
+			},
+			
+			"minecraft:emitter_lifetime_once": {},
+			"minecraft:emitter_rate_instant": {
+				"num_particles": "variable.count * math.random(1, 2)"
+			},
+			
+			"minecraft:emitter_shape_point": {
+				"direction": [
+					"variable.direction.spread = math.clamp(variable.direction.spread, 0, 180); variable.direction.spread == 0 ? {return variable.direction.x;} : {temp.r1 = math.random(-1, 1); temp.r2 = math.random(-1, 1); temp.r3 = math.random(-1, 1); temp.xsq = math.pow(variable.direction.x, 2); temp.ysq = math.pow(variable.direction.y, 2); temp.zsq = math.pow(variable.direction.z, 2); temp.xcb = math.pow(variable.direction.x, 3); temp.ycb = math.pow(variable.direction.y, 3); temp.zcb = math.pow(variable.direction.z, 3); temp.r1sq = math.pow(temp.r1, 2); temp.r2sq = math.pow(temp.r2, 2); temp.r3sq = math.pow(temp.r3, 2);temp.lrandom = math.acos(math.lerp(1, math.cos(variable.direction.spread), math.random(0, 1)));temp.lcos = math.cos(temp.lrandom / 2); temp.lsin = math.sin(temp.lrandom / 2); temp.lcotsq = math.pow(temp.lcos / temp.lsin, 2); temp.randomorthogonal_x_sq = math.pow(temp.r3 * variable.direction.y - temp.r2 * variable.direction.z, 2); temp.randomorthogonal_y_sq = math.pow(temp.r3 * variable.direction.x - temp.r1 * variable.direction.z, 2); temp.randomorthogonal_z_sq = math.pow(temp.r2 * variable.direction.x - temp.r1 * variable.direction.y, 2); temp.randomorthogonal_components_sum = temp.randomorthogonal_x_sq + temp.randomorthogonal_y_sq + temp.randomorthogonal_z_sq; temp.xysq = variable.direction.x * temp.ysq; temp.xzsq = variable.direction.x * temp.zsq; temp.yxsq = variable.direction.y * temp.xsq; temp.yzsq = variable.direction.y * temp.zsq; temp.zxsq = variable.direction.z * temp.xsq; temp.zysq = variable.direction.z * temp.ysq; temp.xyz = variable.direction.x * variable.direction.y * variable.direction.z; temp.r1r3 = temp.r3 * temp.r1; temp.r1r2 = temp.r1 * temp.r2; temp.r2r3 = temp.r3 * temp.r2; temp.randomorthogonal_x_sq_cotsq = temp.randomorthogonal_x_sq * temp.lcotsq; temp.randomorthogonal_norm_cot = math.sqrt(temp.randomorthogonal_components_sum) * (temp.lcos / temp.lsin); temp.randomorthogonal_components_sum_sinsq_inv = -math.pow(temp.lsin, 2) / temp.randomorthogonal_components_sum; temp.r1x = temp.r1 * variable.direction.x; temp.r2y = temp.r2 * variable.direction.y; temp.r3z = temp.r3 * variable.direction.z; return (2 * (temp.randomorthogonal_norm_cot * (temp.r1 * (temp.ysq + temp.zsq) - variable.direction.x * (temp.r2y + temp.r3z)) - temp.r1r2 * temp.yxsq - temp.r1r3 * temp.zxsq - temp.r2r3 * temp.xyz) - variable.direction.x * (temp.lcotsq * (temp.randomorthogonal_z_sq + temp.randomorthogonal_y_sq) + temp.randomorthogonal_x_sq_cotsq - temp.xsq * (temp.r2sq + temp.r3sq) - temp.ysq * (temp.r1sq + temp.r3sq) - temp.zsq * (temp.r1sq + temp.r2sq))) * temp.randomorthogonal_components_sum_sinsq_inv;};",
+					"variable.direction.spread == 0 ? variable.direction.y : (2 * (temp.randomorthogonal_norm_cot * (temp.r2 * (temp.xsq + temp.zsq) - variable.direction.y * (temp.r1x + temp.r3z)) - temp.r1r2 * temp.xysq - temp.r1r3 * temp.xyz - temp.r2r3 * temp.zysq) - variable.direction.y * (temp.lcotsq * (temp.randomorthogonal_z_sq + temp.randomorthogonal_y_sq) + temp.randomorthogonal_x_sq_cotsq - temp.xsq * (temp.r2sq + temp.r3sq) - temp.ysq * (temp.r1sq + temp.r3sq) - temp.zsq * (temp.r1sq + temp.r2sq))) * temp.randomorthogonal_components_sum_sinsq_inv",
+					"variable.direction.spread == 0 ? variable.direction.z : (2 * (temp.randomorthogonal_norm_cot * (temp.r3 * (temp.xsq + temp.ysq) - variable.direction.z * (temp.r1x + temp.r2y)) - temp.r1r2 * temp.xyz - temp.r1r3 * temp.xzsq - temp.r2r3 * temp.yzsq) - variable.direction.z * (temp.lcotsq * (temp.randomorthogonal_z_sq + temp.randomorthogonal_y_sq) + temp.randomorthogonal_x_sq_cotsq - temp.xsq * (temp.r2sq + temp.r3sq) - temp.ysq * (temp.r1sq + temp.r3sq) - temp.zsq * (temp.r1sq + temp.r2sq))) * temp.randomorthogonal_components_sum_sinsq_inv"
+				]
+			},
+			
+			"minecraft:particle_initialization": {
+				"per_render_expression": "temp.size = 0.03125 + 0.03125 * variable.particle_random_1;"
+			},
+			
+			"minecraft:particle_lifetime_expression": {
+				"max_lifetime": "math.random(0.5, 1)"
+			},
+			"minecraft:particle_expire_if_in_blocks": [
+				"minecraft:water",
+				"minecraft:flowing_water",
+				"minecraft:lava",
+				"minecraft:flowing_lava",
+				"minecraft:bubble_column"
+			],
+			
+			"minecraft:particle_initial_speed": "variable.speed * math.random(1, 1.5)",
+			"minecraft:particle_initial_spin": {
+				"rotation": "math.random(0, 360)",
+				"rotation_rate": "(math.random_integer(0, 1) ? 1 : -1) * math.random(180, 360)"
+			},
+			"minecraft:particle_motion_dynamic": {
+				"linear_acceleration": [0, -4, 0]
+			},
+			"minecraft:particle_motion_collision": {
+				"collision_radius": 0.046875,
+				
+				"expire_on_contact": true
+			},
+			
+			"minecraft:particle_appearance_billboard": {
+				"size": ["temp.size", "temp.size"]
+			},
+			"minecraft:particle_appearance_tinting": {
+				"color": [1, 1, 1, "variable.opacity"]
+			},
+			"minecraft:particle_appearance_lighting": {}
+		}
+	}
+}

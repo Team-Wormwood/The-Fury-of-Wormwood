@@ -1,0 +1,1 @@
+playsound weapon.empty.rifle

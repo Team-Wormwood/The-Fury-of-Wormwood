@@ -13,11 +13,11 @@
 			"bones": [
 				{
 					"name": "root",
-					"pivot": [0, 0, 0],
+					"pivot": [0, 4, 0],
 					"cubes": [
 						{
-							"origin": [-8, 0, -8],
-							"size": [16, 16, 16],
+							"origin": [-4, 0, -4],
+							"size": [8, 8, 8],
 							"uv": {
 								"north": {"uv": [0, 0], "uv_size": [16, 16]},
 								"east": {"uv": [0, 0], "uv_size": [16, 16]},
