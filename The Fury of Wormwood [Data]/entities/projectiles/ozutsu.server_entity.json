@@ -71,16 +71,22 @@
         },
         "events": {
             "collide": {
-                "run_command": {
-                    "command": [
-                        "summon wormwood:knockback_explosion"
-                    ]
-                },
-                "add": {
-                    "component_groups": [
-                        "collided"
-                    ]
-                }
+                "sequence": [
+                    {
+                        "run_command": {
+                            "command": [
+                                "summon wormwood:knockback_explosion"
+                            ]
+                        }
+                    },
+                    {
+                        "add": {
+                            "component_groups": [
+                                "collided"
+                            ]
+                        }
+                    }
+                ]
             },
             "despawn": {
                 "add": {
