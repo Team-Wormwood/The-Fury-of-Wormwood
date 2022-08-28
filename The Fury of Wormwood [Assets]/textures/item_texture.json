@@ -1,30 +1,36 @@
 {
-	"resource_pack_name": "The Fury of Wormwood",
-	"texture_name": "atlas.items",
-	"texture_data": {
-		"chinese_assault_rifle": {
-			"textures": "textures/items/chinese_assault_rifle"
-		},
-		"5.56_magazine": {
-			"textures": "textures/items/556_magazine"
-		},
-		"laser_pistol": {
-			"textures": "textures/items/laser_pistol"
-		},
-		"energy_cell": {
-			"textures": "textures/items/energy_cell"
-		},
-		"ozutsu": {
-			"textures": "textures/items/ozutsu"
-		},
-		"cannonball": {
-			"textures": "textures/items/cannonball"
-		},
-		"lever_action_rifle": {
-			"textures": "textures/items/lever_action_rifle"
-		},
-		"44_bullet": {
-			"textures": "textures/items/44_bullet"
-		}
-	}
+    "resource_pack_name": "The Fury of Wormwood",
+    "texture_data": {
+        "44_bullet": {
+            "textures": "textures/items/44_bullet"
+        },
+        "colt_bullet": {
+            "textures": "textures/items/45_bullet"
+        },
+        "5.56_magazine": {
+            "textures": "textures/items/556_magazine"
+        },
+        "cannonball": {
+            "textures": "textures/items/cannonball"
+        },
+        "chinese_assault_rifle": {
+            "textures": "textures/items/chinese_assault_rifle"
+        },
+        "colt": {
+            "textures": "textures/items/colt"
+        },
+        "energy_cell": {
+            "textures": "textures/items/energy_cell"
+        },
+        "laser_pistol": {
+            "textures": "textures/items/laser_pistol"
+        },
+        "lever_action_rifle": {
+            "textures": "textures/items/lever_action_rifle"
+        },
+        "ozutsu": {
+            "textures": "textures/items/ozutsu"
+        }
+    },
+    "texture_name": "atlas.items"
 }

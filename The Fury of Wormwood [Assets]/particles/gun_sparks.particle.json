@@ -1,0 +1,102 @@
+{
+    "format_version": "1.10.0",
+    "particle_effect": {
+        "description": {
+            "identifier": "wormwood:sparks",
+            "basic_render_parameters": {
+                "texture": "textures/bullet_atlas",
+                "material": "particles_blend"
+            }
+        },
+        "curves": {
+            "variable.opacity": {
+                "type": "bezier_chain",
+                "input": "variable.particle_age / variable.particle_lifetime",
+                "nodes": {
+                    "0.75": {
+                        "left_value": 1,
+                        "right_value": 1
+                    },
+                    "1": {
+                        "left_value": 0,
+                        "right_value": 0
+                    }
+                }
+            },
+            "variable.cooling": {
+                "type": "bezier_chain",
+                "input": "variable.particle_age / variable.particle_lifetime",
+                "nodes": {
+                    "0.5": {
+                        "left_value": 1,
+                        "right_value": 1
+                    },
+                    "1": {
+                        "left_value": 0,
+                        "right_value": 0
+                    }
+                }
+            }
+        },
+        "components": {
+            "minecraft:particle_initial_speed": "math.random(1, 1.5)",
+            "minecraft:emitter_lifetime_once": {
+                "active_time": 1
+            },
+            "minecraft:particle_lifetime_expression": {
+                "max_lifetime": "math.random(3, 6)"
+            },
+            "minecraft:particle_initialization": {
+                "per_render_expression": "temp.particle_size = math.Clamp(variable.particle_random_1, 0.125, 0.225);"
+            },
+            "minecraft:emitter_rate_instant": {
+                "num_particles": "math.random(4, 8)"
+            },
+            "minecraft:emitter_shape_point": {
+                "direction": [
+                    0,
+                    0,
+                    5
+                ]
+            },
+            "minecraft:particle_expire_if_in_blocks": [
+                "minecraft:water_cauldron",
+                "minecraft:flowing_water",
+                "minecraft:water",
+                "minecraft:bubble_column"
+            ],
+            "minecraft:particle_initial_spin": {
+                "rotation": "math.random(0, 180)",
+                "rotation_rate": "math.random(-1, 1)"
+            },
+            "minecraft:particle_motion_dynamic": {
+                "linear_drag_coefficient": 0.22,
+                "linear_acceleration": [
+                    0,
+                    -4,
+                    0
+                ]
+            },
+            "minecraft:particle_motion_collision": {
+                "expire_on_contact": false,
+                "coefficient_of_restitution": 0.33,
+                "collision_drag": 1,
+                "collision_radius": 0.05
+            },
+            "minecraft:particle_appearance_billboard": {
+                "size": [
+                    "temp.particle_size",
+                    "temp.particle_size"
+                ]
+            },
+            "minecraft:particle_appearance_tinting": {
+                "color": [
+                    "variable.cooling",
+                    "variable.cooling",
+                    "variable.cooling",
+                    "1"
+                ]
+            }
+        }
+    }
+}

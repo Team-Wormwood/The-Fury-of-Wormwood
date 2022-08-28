@@ -50,12 +50,13 @@
                 ]
             },
             "minecraft:projectile": {
-                "power": 5,
-                "uncertainty_base": 4,
-                "uncertainty_multiplier": 1,
-                "gravity": 0.01,
                 "crit_particle_on_hurt": true,
                 "multiple_targets": false,
+                "uncertainty_multiplier": 1,
+                "uncertainty_base": 4,
+                "gravity": 0.01,
+                "inertia": 0.85,
+                "power": 8,
                 "on_hit": {
                     "impact_damage": {
                         "damage": 12,

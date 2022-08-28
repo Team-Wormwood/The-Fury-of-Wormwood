@@ -1,0 +1,24 @@
+{
+    "format_version": "1.10.0",
+    "minecraft:attachable": {
+        "description": {
+            "identifier": "wormwood:colt",
+            "materials": {
+                "default": "entity_alphatest",
+                "enchanted": "entity_alphatest_glint"
+            },
+            "textures": {
+                "default": "textures/entity/fox/fox"
+            },
+            "geometry": {
+                "default": "geometry.invisible"
+            },
+            "scripts": {
+                "scale": "0.0"
+            },
+            "render_controllers": [
+                "controller.render.default"
+            ]
+        }
+    }
+}

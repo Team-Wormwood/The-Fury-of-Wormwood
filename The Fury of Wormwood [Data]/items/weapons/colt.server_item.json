@@ -1,0 +1,60 @@
+{
+    "format_version": "1.16.100",
+    "minecraft:item": {
+        "description": {
+            "identifier": "wormwood:colt",
+            "category": "equipment"
+        },
+        "components": {
+            "minecraft:can_destroy_in_creative": false,
+            "tag:wormwood:attachable_weapon": {},
+            "minecraft:max_stack_size": 1,
+            "minecraft:use_duration": 4096,
+            "minecraft:damage": 2,
+            "minecraft:cooldown": {
+                "category": "colt",
+                "duration": 0.66
+            },
+            "minecraft:on_use": {
+                "on_use": {
+                    "event": "colt:fire.prefiring"
+                }
+            },
+            "minecraft:creative_category": {
+                "parent": "itemGroup.name.equipment"
+            },
+            "minecraft:icon": {
+                "texture": "colt"
+            }
+        },
+        "events": {
+            "colt:fire.prefiring": {
+                "sequence": [
+                    {
+                        "condition": "query.scoreboard('ammunition.COL') >= 1 && query.scoreboard('ammunition.COL') <= 6",
+                        "trigger": {
+                            "event": "colt:fire.firing"
+                        }
+                    }
+                ]
+            },
+            "colt:fire.firing": {
+                "shoot": {
+                    "projectile": "wormwood:bullet.colt",
+                    "launch_power": 1,
+                    "angle_offset": "math.Random(-0.25, 0.25)" 
+                },
+                "run_command": {
+                    "command": [
+                        "scoreboard players remove @s[scores={ammunition.COL=1..6}] ammunition.COL 1",
+                        "function SFX/rifle"
+                    ]
+                },
+                "trigger": {
+                    "event": "modified_player:add_client_flag.colt",
+                    "target": "holder"
+                }
+            }
+        }
+    }
+}

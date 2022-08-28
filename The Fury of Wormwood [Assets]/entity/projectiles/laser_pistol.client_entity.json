@@ -24,7 +24,7 @@
 				"trail.bullet": "wormwood:trail.laser_pistol"
 			},
 			"render_controllers": [
-				"controller.render.default"
+				"controller.render.bullet"
 			]
 		}
 	}

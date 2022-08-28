@@ -2,7 +2,7 @@
 	"format_version": "1.10.0",
 	"minecraft:client_entity": {
 		"description": {
-			"identifier": "wormwood:bullet.chinese_assault_rifle",
+			"identifier": "wormwood:bullet.colt",
 			"materials": {
 				"default": "entity_emissive_alpha"
 			},
@@ -21,7 +21,7 @@
 				"bullet_travel": "animation.bullet.travel"
 			},
 			"particle_effects": {
-				"trail.bullet": "wormwood:trail.chinese_assault_rifle"
+				"trail.bullet": "wormwood:trail.colt"
 			},
 			"render_controllers": [
 				"controller.render.bullet"

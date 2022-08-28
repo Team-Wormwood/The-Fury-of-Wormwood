@@ -8,7 +8,7 @@
 					"name": "sounds/weapons/empty.pistol",
 					"is3D": false,
 					"stream": true,
-					"volume": 1.0
+					"volume":1.0
 				}
 			]
 		},
@@ -19,7 +19,7 @@
 					"name": "sounds/weapons/empty.rifle",
 					"is3D": false,
 					"stream": true,
-					"volume": 1.0
+					"volume":1.0
 				}
 			]
 		},
@@ -32,35 +32,35 @@
 					"is3D": true,
 					"stream": true,
 					"pitch": 0.88,
-					"volume": 5.5
+					"volume":1.0
 				},
 				{
 					"name": "sounds/weapons/chinese_assault_rifle.fire",
 					"is3D": true,
 					"stream": true,
 					"pitch": 0.95,
-					"volume": 5.5
+					"volume":1.0
 				},
 				{
 					"name": "sounds/weapons/chinese_assault_rifle.fire",
 					"is3D": true,
 					"stream": true,
 					"pitch": 1.0,
-					"volume": 5.5
+					"volume":1.0
 				},
 				{
 					"name": "sounds/weapons/chinese_assault_rifle.fire",
 					"is3D": true,
 					"stream": true,
 					"pitch": 1.1,
-					"volume": 5.5
+					"volume":1.0
 				},
 				{
 					"name": "sounds/weapons/chinese_assault_rifle.fire",
 					"is3D": true,
 					"stream": true,
 					"pitch": 1.2,
-					"volume": 5.5
+					"volume":1.0
 				}
 			]
 		},
@@ -72,7 +72,7 @@
 					"name": "sounds/weapons/chinese_assault_rifle.reload",
 					"is3D": false,
 					"stream": true,
-					"volume": 1.0
+					"volume":1.0
 				}
 			]
 		},
@@ -84,7 +84,19 @@
 					"name": "sounds/weapons/laser_pistol.fire",
 					"is3D": true,
 					"stream": true,
-					"volume": 5.25
+					"volume": 1.0
+				}
+			]
+		},
+		"weapon.colt.fire": {
+			"category": "player",
+			"max_distance": 128.0,
+			"sounds": [
+				{
+					"name": "sounds/weapons/colt.fire",
+					"is3D": true,
+					"stream": true,
+					"volume":1.0
 				}
 			]
 		},
@@ -96,7 +108,7 @@
 					"name": "sounds/weapons/laser_pistol.reload",
 					"is3D": false,
 					"stream": true,
-					"volume": 1.0
+					"volume":1.0
 				}
 			]
 		},
@@ -108,7 +120,7 @@
 					"name": "sounds/weapons/ozutsu.fire",
 					"is3D": true,
 					"stream": true,
-					"volume": 1.25
+					"volume":1.0
 				}
 			]
 		},
@@ -120,7 +132,7 @@
 					"name": "sounds/weapons/ozutsu.reload",
 					"is3D": false,
 					"stream": true,
-					"volume": 1.0
+					"volume":1.0
 				}
 			]
 		},
@@ -133,35 +145,35 @@
 					"is3D": true,
 					"stream": true,
 					"pitch": 0.88,
-					"volume": 5.5
+					"volume":1.0
 				},
 				{
 					"name": "sounds/weapons/lever_action_rifle.fire",
 					"is3D": true,
 					"stream": true,
 					"pitch": 0.95,
-					"volume": 5.5
+					"volume":1.0
 				},
 				{
 					"name": "sounds/weapons/lever_action_rifle.fire",
 					"is3D": true,
 					"stream": true,
 					"pitch": 1.0,
-					"volume": 5.5
+					"volume":1.0
 				},
 				{
 					"name": "sounds/weapons/lever_action_rifle.fire",
 					"is3D": true,
 					"stream": true,
 					"pitch": 1.1,
-					"volume": 5.5
+					"volume":1.0
 				},
 				{
 					"name": "sounds/weapons/lever_action_rifle.fire",
 					"is3D": true,
 					"stream": true,
 					"pitch": 1.2,
-					"volume": 5.5
+					"volume":1.0
 				}
 			]
 		},
@@ -173,7 +185,7 @@
 					"name": "sounds/weapons/lever_action_rifle.reload",
 					"is3D": false,
 					"stream": true,
-					"volume": 1.0
+					"volume":1.0
 				}
 			]
 		}
