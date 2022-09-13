@@ -3,7 +3,7 @@
     "minecraft:item": {
         "description": {
             "identifier": "wormwood:cannon_ball",
-            "category": "equipment"
+            "category": "none"
         },
         "components": {
             "minecraft:use_duration": 4096,

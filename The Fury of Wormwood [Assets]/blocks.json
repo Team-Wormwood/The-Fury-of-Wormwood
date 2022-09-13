@@ -3,5 +3,8 @@
 		1,
 		1,
 		0
-	]
+	],
+	"wormwood:light_block.1": {
+		"texture": "invisible"
+	}
 }

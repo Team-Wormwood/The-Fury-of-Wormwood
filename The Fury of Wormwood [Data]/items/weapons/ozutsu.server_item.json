@@ -3,7 +3,7 @@
     "minecraft:item": {
         "description": {
             "identifier": "wormwood:ozutsu",
-            "category": "equipment"
+            "category": "none"
         },
         "components": {
             "minecraft:can_destroy_in_creative": false,
