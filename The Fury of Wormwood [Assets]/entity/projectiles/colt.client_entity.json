@@ -21,7 +21,7 @@
 				"bullet_travel": "animation.bullet.travel"
 			},
 			"particle_effects": {
-				"trail.bullet": "wormwood:trail.colt"
+				"bullet_trail": "wormwood:bullet_trail"
 			},
 			"render_controllers": [
 				"controller.render.bullet"

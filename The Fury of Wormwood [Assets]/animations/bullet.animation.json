@@ -6,7 +6,7 @@
             "particle_effects": {
                 "0.0": [
                     {
-                        "effect": "trail.bullet",
+                        "effect": "bullet_trail",
                         "locator": "root"
                     }
                 ]
